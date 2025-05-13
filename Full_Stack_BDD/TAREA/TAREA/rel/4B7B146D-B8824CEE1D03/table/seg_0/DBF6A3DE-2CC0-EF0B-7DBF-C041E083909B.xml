@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBF6A3DE-2CC0-EF0B-7DBF-C041E083909B" name="ROL_PERMISO">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>EAD6EDB7-4ACD-6C46-651A-516D77978531</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_rol_permiso" id="041DC3F1-695F-F172-61DE-D91BC16D94C6">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>AF935E5A-8D7F-8F71-E304-26D0FE51C088</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_permiso_rol" id="86B27E01-BEF3-4E88-B087-BC78680C929A">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>67124BEA-11BC-45E7-3520-11F981AABA43</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_rol" id="DC4D400B-6BFC-18CA-39C2-A86C0452C641">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:21:21 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6D53B0A1-7B1F-407B-808D-8428681A92A1" referredColumn="0819144A-2B7B-3DB0-58CA-DC5B0A0518F1"/>
+</associations>
+</Column>
+<Column name="id_permiso" id="F8509F62-E7F0-0A34-24BB-CB61314C9588">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:21:25 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3444FFCB-D56F-57B3-3BF1-E29A1D0B82ED" referredColumn="ECB41C51-B1A4-E131-A543-7BC0DAA72AED"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9D4D07ED-BB18-230A-A1B6-15A9AC0A9881" name="ROL_PERMISO_PK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>2A39858B-B4C1-C19F-AEEB-E534E5703A92</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="041DC3F1-695F-F172-61DE-D91BC16D94C6"/>
+<colUsage columnID="86B27E01-BEF3-4E88-B087-BC78680C929A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67686876-ED3B-F24E-EED6-3D4251740B1D" name="ROL_PERMISO_ROL_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:21:21 UTC</createdTime>
+<generatorID>49F33D63-ED37-5518-71BB-4DF85B8BF156</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC4D400B-6BFC-18CA-39C2-A86C0452C641"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E0CCE2A-F321-A661-EBFF-5E87C4FC1C1C" name="ROL_PERMISO_PERMISO_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:21:25 UTC</createdTime>
+<generatorID>06346F46-5CC7-4726-DADD-CBF19A5D2D6F</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8509F62-E7F0-0A34-24BB-CB61314C9588"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

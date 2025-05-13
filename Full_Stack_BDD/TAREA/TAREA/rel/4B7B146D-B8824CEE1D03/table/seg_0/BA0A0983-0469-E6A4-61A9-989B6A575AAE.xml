@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BA0A0983-0469-E6A4-61A9-989B6A575AAE" name="USUARIO">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>AB9FCDA2-445B-0667-35DF-066E56781550</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_usuario" id="81F0C53C-B38B-D888-C61F-4A2AFE122E84">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:52:02 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="94B3BCF6-E467-8DFE-9D9D-1D9D5AC04123">
+<createdBy>user</createdBy>
+<createdTime>2025-04-09 03:33:02 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario" id="3485BED5-9C70-8E06-3E2B-75811767D94A">
+<createdBy>user</createdBy>
+<createdTime>2025-04-09 03:34:53 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contasena" id="2681915A-D858-2D52-9E39-56E774772E39">
+<createdBy>user</createdBy>
+<createdTime>2025-04-09 03:34:53 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_rol" id="7A0EE35C-1568-0B97-EAF2-1FA13FD0EC4F">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>60DA3587-F4AD-C857-A6DA-8C32DD715A3A</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB2F2810-C927-D7B8-D23A-8A8E8E689C96" referredColumn="0819144A-2B7B-3DB0-58CA-DC5B0A0518F1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="004456B7-1E88-87CD-0B0B-06C5F3354D27" name="USUARIO_PK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>4AF017AE-2E14-9E2E-2C88-DCE993C8ABBB</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81F0C53C-B38B-D888-C61F-4A2AFE122E84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC49B43C-A842-4194-6CFC-719A51B2F5C4" name="USUARIO__IDX">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>66649691-498A-ABB1-58EC-997E4AE22A35</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="7A0EE35C-1568-0B97-EAF2-1FA13FD0EC4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8780353-BA1D-375C-4820-6565968372D9" name="USUARIO_ROL_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>66649691-498A-ABB1-58EC-997E4AE22A35</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A0EE35C-1568-0B97-EAF2-1FA13FD0EC4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DFE60B63-78FB-578C-7245-57AE13E5CAA0" name="DONACION">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:27:34 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_donacion" id="3994E647-7910-227C-B409-333F6FBE93C8">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:29:02 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fec_donacion" id="C0A96AC5-A949-851B-C418-EE66455DB0F6">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:29:02 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_libro" id="7B406E37-1F71-AE65-9631-E0511DB65788">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:50:22 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_usuario" id="D5286AF0-3CA4-A79C-BD69-E51366A2802B">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:50:22 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIO_id_usuario" id="FAB7CBE9-F23D-E9BB-EB73-D592BC9EA750">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:52:56 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="504C1986-6CB6-5976-3E42-78A2695A8F95" referredColumn="81F0C53C-B38B-D888-C61F-4A2AFE122E84"/>
+</associations>
+</Column>
+<Column name="LIBRO_id_libro" id="EDEB90E1-1C98-5A49-D8BA-18C50EBDD00C">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:53:25 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF17EB7B-4F7D-8296-3163-6BE11A7CB665" referredColumn="723E7847-A21D-378A-BD1B-F6297AB552EC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="65A17101-D36E-FC80-6EF5-1BD5317EED5B" name="DONACION_PK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:29:02 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3994E647-7910-227C-B409-333F6FBE93C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DF0C582C-47DD-0966-4258-2146BE3E531F" name="DONACION_USUARIO_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:50:39 UTC</createdTime>
+<generatorID>4AF017AE-2E14-9E2E-2C88-DCE993C8ABBB</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FAB7CBE9-F23D-E9BB-EB73-D592BC9EA750"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="230DE968-0EB9-797E-F0D1-521C79CF455A" name="DONACION_LIBRO_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:53:25 UTC</createdTime>
+<generatorID>656A88A6-C6C4-776C-61AC-8DF27951F6FE</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EDEB90E1-1C98-5A49-D8BA-18C50EBDD00C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="07D55D42-DE81-EB36-4D04-C1526D84048F" containerWithKeyObject="5AF3C828-0A1C-A0EE-51CF-DA9CB2427647" localFKIndex="73547FB5-6E03-FACA-2F2A-9B54404CC932" name="MULTA_PERSONA_FK">
+<createdBy>user</createdBy>
+<createdTime>2025-04-09 04:27:47 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<referredTableLongName>PERSONA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9A11AEFE-EDEB-1758-6B8A-29DF69251B30</referredTableID>
+<keyObject>2EDDACAB-AAEB-3E83-29F7-438C8339C692</keyObject>
+<referredKeyID>2EDDACAB-AAEB-3E83-29F7-438C8339C692</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>rut</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

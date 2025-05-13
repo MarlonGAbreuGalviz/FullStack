@@ -1,0 +1,8 @@
+.- Instalar Jdk 21
+.- pluginx java exp
+.- plugin  initialzr spring
+.- Agregamos dependencias en el archivo pom.xml
+        jdbc  => oracle
+        lombo => Getter Setter Otros
+        persistencia
+        jpa   ==> CrudRepository

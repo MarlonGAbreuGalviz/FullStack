@@ -1,0 +1,7 @@
+.- Instalar Jdk21
+.- Pluginx java exp
+.- plugin initialz spring
+.- Agregamos dependencias en el archivo pom.xml
+    jdbc => oracle
+    lombo=> Getter Setter otros 
+    persistencia

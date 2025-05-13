@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AB9FCDA2-445B-0667-35DF-066E56781550" name="USUARIO">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:56:36 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rut" id="73150A3C-5D03-F596-21AD-53323F6130FF">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:56:46 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="p_nombre" id="157EC861-FCDC-028E-3AE4-67495739BB0A">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:57:25 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="s_nombre" id="AE630F3A-C200-F990-38B9-0B636A68A098">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:58:10 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apell_pat" id="DDA49ABB-1142-E4A8-5935-73010C2D8B23">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:58:15 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apell_mat" id="A28A4564-DED3-ACD2-2FF2-64AA45513AE5">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:58:24 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_rol" id="60DA3587-F4AD-C857-A6DA-8C32DD715A3A">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 21:15:26 UTC</createdTime>
+<generatorID>66649691-498A-ABB1-58EC-997E4AE22A35</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<referedAttribute>8343B7C3-4E06-8552-FEF0-F768E81AADFA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4AF017AE-2E14-9E2E-2C88-DCE993C8ABBB" name="USUARIO PK">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 20:57:24 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>73150A3C-5D03-F596-21AD-53323F6130FF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

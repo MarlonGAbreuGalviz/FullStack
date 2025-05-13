@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7359EFB-6B1F-FEFE-F861-8AB6F27EC1AA" name="NRO_ESTANTERIA">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:33:50 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<ordsAlias>table_20</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_estanteria" id="D7DF76BC-A6F8-4ED5-1543-950C3492CD84">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:34:49 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estanteria_descripcion" id="0B2722C0-FAC9-A8CE-3F7B-FBD9E158D085">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:34:49 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASILLO_id_pasillo" id="C6D5CC9B-6CD9-4BB0-C5E8-1780F1F86F95">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:37:55 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AE8BACAC-3593-7B21-91E3-E9A7453663E7" referredColumn="B500AA33-42DF-45FA-AA72-42450B4B39CC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7F1650CE-F5AE-429B-40D2-FE2AF7F487BF" name="NRO_ESTANTERIA_PK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:34:49 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7DF76BC-A6F8-4ED5-1543-950C3492CD84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="85094399-4DBF-7A89-67D2-5B3608C50F94" name="NRO_ESTANTERIA__IDX">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:38:21 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6D5CC9B-6CD9-4BB0-C5E8-1780F1F86F95"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3E3FFA5-B32C-A0D9-1F5F-D1774B6E166A" name="NRO_ESTANTERIA_PASILLO_FK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:37:55 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6D5CC9B-6CD9-4BB0-C5E8-1780F1F86F95"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
