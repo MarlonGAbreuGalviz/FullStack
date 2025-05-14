@@ -1,6 +1,9 @@
 package cl.trabajo.Categoria.dto;
 
 
+import java.util.List;
+
+import cl.trabajo.Libro.dto.LibroDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -23,6 +26,6 @@ public class CategoriaDTO {
     private String categoria;
     @Column(name = "idLibro")
     private int idLibro;
-    
+    //List<LibroDTO> libros;
     
 }
