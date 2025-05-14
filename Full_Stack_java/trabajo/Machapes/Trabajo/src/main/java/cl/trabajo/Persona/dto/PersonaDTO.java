@@ -2,7 +2,6 @@ package cl.trabajo.Persona.dto;
 
 import java.sql.Date;
 
-import cl.trabajo.Usuario.dto.UsuarioDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,5 +1,7 @@
 package cl.trabajo.Usuario.dto;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,9 +28,13 @@ public class UsuarioDTO {
     private String email;
     @Column(name = "usuario")
     private String usuario;
+
     @Column(name = "contrasena")
     private String contrasena;
-    public String getContrasena() {
+
+    // Mostrar solo **** en las respuestas GET
+    @JsonGetter("contrasena")
+    public String getMaskedContrasena() {
         return "*****";
     }
 

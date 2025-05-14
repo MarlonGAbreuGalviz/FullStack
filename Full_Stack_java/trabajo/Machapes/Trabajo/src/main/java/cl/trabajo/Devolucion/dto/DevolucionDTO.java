@@ -2,7 +2,6 @@ package cl.trabajo.Devolucion.dto;
 
 import java.time.LocalDate;
 
-import cl.trabajo.Usuario.dto.UsuarioDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -21,12 +20,16 @@ import lombok.Setter;
 public class DevolucionDTO {
     @Id
     private int idDevolucion;
+    
     @Column(name = "devuelto")
     private boolean devuelto;
+
     @Column(name = "fecDevolucion")
     private LocalDate fecDevolucion;
+
     @Column(name = "idPrestamo")
     private int idPrestamo;
+
     @Column(name = "idUsuario")
     private int idUsuario;
     //private UsuarioDTO usuarioClase;

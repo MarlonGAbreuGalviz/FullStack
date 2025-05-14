@@ -2,8 +2,7 @@ package cl.trabajo.Donacion.dto;
 
 import java.time.LocalDate;
 
-import cl.trabajo.Libro.dto.LibroDTO;
-import cl.trabajo.Usuario.dto.UsuarioDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
