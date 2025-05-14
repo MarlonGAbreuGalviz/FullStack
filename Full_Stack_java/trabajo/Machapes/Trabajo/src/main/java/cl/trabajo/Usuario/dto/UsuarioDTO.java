@@ -28,7 +28,6 @@ public class UsuarioDTO {
     private String usuario;
     @Column(name = "contrasena")
     private String contrasena;
-
     public String getContrasena() {
         return "*****";
     }

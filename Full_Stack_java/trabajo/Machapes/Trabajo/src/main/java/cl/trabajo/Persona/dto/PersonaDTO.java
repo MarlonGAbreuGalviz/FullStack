@@ -2,6 +2,7 @@ package cl.trabajo.Persona.dto;
 
 import java.sql.Date;
 
+import cl.trabajo.Usuario.dto.UsuarioDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -30,4 +31,9 @@ public class PersonaDTO {
     private String apMaterno;
     @Column(name = "fecNacimiento")
     private Date fecNacimiento;
+    @Column(name = "idUsuario")
+    private int idUsuario;
+    @Column(name = "usuario")
+    private String usuario;
+    private UsuarioDTO usuarioClase;
 }

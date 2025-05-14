@@ -2,6 +2,8 @@ package cl.trabajo.Donacion.dto;
 
 import java.time.LocalDate;
 
+import cl.trabajo.Libro.dto.LibroDTO;
+import cl.trabajo.Usuario.dto.UsuarioDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -21,11 +23,12 @@ import lombok.Setter;
 public class DonacionDTO {
     @Id
     private int idDonacion;
-    @Column(name = "fec_donacion")
+    @Column(name = "fecDonacion")
     private LocalDate fecDonacion;
-    @Column(name = "id_libro")
+    @Column(name = "idLibro")
     private int idLibro;
-    @Column(name = "id_usuario")
+    @Column(name = "idUsuario")
     private int idUsuario;
-
+    private LibroDTO libroClase;
+    private UsuarioDTO usuarioClase;
 }
