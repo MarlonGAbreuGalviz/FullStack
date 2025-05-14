@@ -29,5 +29,5 @@ public class DevolucionDTO {
     private int idPrestamo;
     @Column(name = "idUsuario")
     private int idUsuario;
-    private UsuarioDTO usuarioClase;
+    //private UsuarioDTO usuarioClase;
 }

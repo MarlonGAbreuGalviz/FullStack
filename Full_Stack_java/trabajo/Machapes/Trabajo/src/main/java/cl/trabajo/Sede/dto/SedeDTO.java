@@ -21,8 +21,8 @@ public class SedeDTO {
     private int idSede;
     @Column(name = "nombreSede")
     private String nombreSede;
-    @Column(name = "ciudad")
-    private String ciudad;
+    @Column(name = "comuna")
+    private String comuna;
     @Column(name = "direccion")
     private String direccion;
 }

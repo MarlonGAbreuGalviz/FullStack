@@ -1,6 +1,6 @@
 package cl.trabajo.Libro.dto;
 
-import cl.trabajo.Autor.dto.*;
+// import cl.trabajo.Autor.dto.*;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,5 +29,6 @@ public class LibroDTO {
     private int stock;
     @Column(name = "idAutor")
     private int idAutor;
-    private AutorDTO autor;
+
+    // private AutorDTO autor;
 }

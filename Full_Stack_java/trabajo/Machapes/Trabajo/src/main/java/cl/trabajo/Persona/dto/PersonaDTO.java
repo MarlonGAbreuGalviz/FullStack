@@ -33,7 +33,6 @@ public class PersonaDTO {
     private Date fecNacimiento;
     @Column(name = "idUsuario")
     private int idUsuario;
-    @Column(name = "usuario")
-    private String usuario;
-    private UsuarioDTO usuarioClase;
+    
+    //private UsuarioDTO usuarioClase;
 }
