@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="08D42A69-D4B4-1B21-0E0B-E0ECD0BFAC3F" name="DEVOLUCION">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>337D7D33-8768-A02C-DCCB-5EEA61793D4E</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_devolucion" id="77075836-6AC0-177D-33A6-6FB9D23060A1">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>FF3E6649-9596-337E-06C8-48D1AA5E84FA</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_prestamo" id="2F581D4D-CCF9-76F5-5BB6-F4EE2EA90365">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>DBC3AB36-8A9E-F982-ED80-4D615BEDC2C3</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fec_devolucion" id="8B03396C-4309-BCF6-E501-01C1F810BDFE">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>17F39255-F6C3-D272-E46F-33025B8A36F2</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="multa" id="34B34C97-14E0-8981-B5BD-A3529341FBEF">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>A90E5670-4787-DB52-C8E0-1E094C56A936</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRESTAMO_id_prestamo" id="1B330BDE-EAEA-68A1-CCB8-873B8BAE6C05">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:24:44 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C5D51CF7-2CE0-3559-FC4F-FEC54EACA252" referredColumn="67A5F077-0924-F44B-02B8-ED5747C20A84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7F638A5F-F23A-752D-E80A-C7D8F8DE50D0" name="DEVOLUCION_PK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>5B8443B3-3B88-2F96-AD43-7E4376552505</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77075836-6AC0-177D-33A6-6FB9D23060A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="80CF66BD-CBC8-81EF-DBE2-C4FF11E1E3FD" name="DEVOLUCION_PRESTAMO_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:24:44 UTC</createdTime>
+<generatorID>5179A45C-2E0B-DDDD-0AA9-7AC5FA1F722C</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B330BDE-EAEA-68A1-CCB8-873B8BAE6C05"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

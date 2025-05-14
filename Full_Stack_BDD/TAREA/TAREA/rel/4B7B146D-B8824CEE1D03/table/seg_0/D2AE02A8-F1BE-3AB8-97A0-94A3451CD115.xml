@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D2AE02A8-F1BE-3AB8-97A0-94A3451CD115" name="UBICACION">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:26:42 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<ordsAlias>table_16</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_ubicacion" id="C575A770-1906-37DC-20F9-1A7A900D2429">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:27:40 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="087B2127-D830-8F53-4078-65A0EF3503FD">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:27:40 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIBRO_id_libro" id="70968524-096C-3CB0-0482-C377BDF56E7F">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:36:18 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="51CDA87E-C3B2-075E-0D45-B2E59028CB71" referredColumn="723E7847-A21D-378A-BD1B-F6297AB552EC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E931C31-5DF8-6A99-AA45-095B2A760E49" name="DIRECCION_PK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:27:45 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C575A770-1906-37DC-20F9-1A7A900D2429"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8A05C73-9C9E-38C6-A5C4-5B21B4ADBC9C" name="UBICACION_LIBRO_FK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:36:18 UTC</createdTime>
+<generatorID>656A88A6-C6C4-776C-61AC-8DF27951F6FE</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70968524-096C-3CB0-0482-C377BDF56E7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

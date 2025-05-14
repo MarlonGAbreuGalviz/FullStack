@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1856F21F-7AF0-79A9-3388-AD86D451E81E" name="PRESTAMO_LIBRO">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>10E25A97-EA6F-5840-E7EF-B0935F5A8F49</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_prestamo_libro" id="A570CFEF-13C7-8FFF-7352-9F40F7B401ED">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>1D7E008A-24B9-7A6F-A4B6-788000A96A2B</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_libro_prestramo" id="C138D47C-E36C-AF95-536E-0CB2B879D1F2">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>03A4308F-651E-674F-9900-2FF9E655491E</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="4CE55EC8-B7CF-4A81-54E9-29B31D95BD12">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>A88BE11A-FD58-B244-C7EA-E4CC4150CFE8</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_prestamo" id="C0973A54-1A1D-2B1D-8495-DC83824E38F5">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:20:08 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="036C6C12-4DB7-9235-064E-F257FEC43B10" referredColumn="67A5F077-0924-F44B-02B8-ED5747C20A84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="72C565AC-1B38-E3A9-02B2-DEE033FFBB54" name="PRESTAMO_LIBRO_PK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>114D3F37-3B1A-475E-9F67-83DEB6A04275</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A570CFEF-13C7-8FFF-7352-9F40F7B401ED"/>
+<colUsage columnID="C138D47C-E36C-AF95-536E-0CB2B879D1F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E5CBBD6-C14B-6A52-C069-E1C04683BF70" name="PRESTAMO_LIBRO_PRESTAMO_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:20:08 UTC</createdTime>
+<generatorID>5179A45C-2E0B-DDDD-0AA9-7AC5FA1F722C</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0973A54-1A1D-2B1D-8495-DC83824E38F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

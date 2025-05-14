@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="512113BE-28F1-7388-E533-80414A7918DC" name="AUTOR">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 21:24:30 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_autor" id="BB04BFDD-E300-79D4-DF4E-EB35A932D88C">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 21:25:11 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre_autor" id="B8883E46-3621-AA51-1BB6-B0D0FD7BB5F0">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 21:25:14 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C89658EA-2F42-FF70-F01D-211C1D3BF5AE" name="AUTOR PK">
+<createdBy>DuocUC</createdBy>
+<createdTime>2025-03-14 21:25:57 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<engineerTo>
+<item key="4B7B146D-B1F1-6293-9C94-B8824CEE1D03" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BB04BFDD-E300-79D4-DF4E-EB35A932D88C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

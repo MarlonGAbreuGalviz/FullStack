@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AE8BACAC-3593-7B21-91E3-E9A7453663E7" containerWithKeyObject="D7359EFB-6B1F-FEFE-F861-8AB6F27EC1AA" localFKIndex="E3E3FFA5-B32C-A0D9-1F5F-D1774B6E166A" name="NRO_ESTANTERIA_PASILLO_FK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:37:55 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<referredTableLongName>PASILLO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AF70CBA5-2CA8-A0F5-ADA4-A47B1BD3FD54</referredTableID>
+<keyObject>B883F265-35C8-1FE9-0AD7-7E744B9DCD4C</keyObject>
+<referredKeyID>B883F265-35C8-1FE9-0AD7-7E744B9DCD4C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_pasillo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

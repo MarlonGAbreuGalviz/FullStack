@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF70CBA5-2CA8-A0F5-ADA4-A47B1BD3FD54" name="PASILLO">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:33:05 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<ordsAlias>table_19</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pasillo" id="B500AA33-42DF-45FA-AA72-42450B4B39CC">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:33:46 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pasillo_descripcion" id="673B861A-F977-77E9-D66D-6749F3AA4E4A">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:33:46 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PISO_id_piso" id="F4C2DEA1-B24A-CC1A-B546-770060FAA1C4">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:37:51 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E89D1BD-9916-798B-761C-8ADD9CCD0688" referredColumn="580F6DFA-4328-7421-5BBC-95506F7718C7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B883F265-35C8-1FE9-0AD7-7E744B9DCD4C" name="PASILLO_PK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:33:46 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B500AA33-42DF-45FA-AA72-42450B4B39CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BA6858BA-A5E9-F766-68B7-FB6EA75581EC" name="PASILLO__IDX">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:38:09 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4C2DEA1-B24A-CC1A-B546-770060FAA1C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="525C75DD-8F8D-C917-0B3E-67AE3068152A" name="PASILLO_PISO_FK">
+<createdBy>DUOC</createdBy>
+<createdTime>2025-04-09 17:37:51 UTC</createdTime>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4C2DEA1-B24A-CC1A-B546-770060FAA1C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="24905C8C-9FDE-F55E-467D-9AB0EDB6B263" name="CATEGORIA">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>CF980D46-6B41-F999-8340-E842965584E8</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_categoria" id="62F8B633-78B0-31AB-2973-BB2C015E05A2">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>4134B00D-E33E-48C6-4DDD-0A98DF9940FE</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categoria" id="2DCC6B2F-DDCB-FA11-24BA-92C15F8871C6">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>775C2414-D4FD-6E1D-F218-35D45EE19CD5</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIBRO_id_libro" id="F3C73516-8B1B-A6A0-183D-00E70DD3D2D0">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>36947A52-8B1C-5140-AEAE-1EACC217719E</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="862F55F2-1F64-5545-8366-6DBF4FCB3F89" referredColumn="723E7847-A21D-378A-BD1B-F6297AB552EC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="99D580CC-493D-5AEB-8613-85FB1D08F497" name="CATEGORIA_PK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>6C43DE47-2371-5226-9275-FAF5167C447C</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62F8B633-78B0-31AB-2973-BB2C015E05A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A59B12EB-CD88-A995-BABF-018825975D0A" name="CATEGORIA_LIBRO_FK">
+<createdBy>The_Master</createdBy>
+<createdTime>2025-03-14 23:19:01 UTC</createdTime>
+<generatorID>89E067B7-95AE-0904-74FD-3376EC3BB718</generatorID>
+<ownerDesignName>TAREA</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3C73516-8B1B-A6A0-183D-00E70DD3D2D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
