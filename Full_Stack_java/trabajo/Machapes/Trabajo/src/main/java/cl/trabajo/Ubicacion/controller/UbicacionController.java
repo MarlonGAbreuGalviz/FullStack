@@ -22,14 +22,14 @@ public class UbicacionController {
     IUbicacionService UbicacionService;
 
     @PostMapping
-    public UbicacionDTO insertUbicacionDTO(@RequestBody UbicacionDTO Ubicacion) {
-        UbicacionDTO aux = UbicacionService.insertUbicacionDTO(Ubicacion);
+    public UbicacionDTO insertUbicacionDTO(@RequestBody UbicacionDTO ubicacion) {
+        UbicacionDTO aux = UbicacionService.insertUbicacionDTO(ubicacion);
         return aux;
     }
 
     @PutMapping("/{idUbicacion}")
-    public UbicacionDTO updateUbicacionDTO(@PathVariable int idUbicacion, @RequestBody UbicacionDTO Ubicacion) {
-        UbicacionDTO aux = UbicacionService.updateUbicacionDTO(idUbicacion, Ubicacion);
+    public UbicacionDTO updateUbicacionDTO(@PathVariable int idUbicacion, @RequestBody UbicacionDTO ubicacion) {
+        UbicacionDTO aux = UbicacionService.updateUbicacionDTO(idUbicacion, ubicacion);
         return aux;
     }
 
