@@ -15,26 +15,26 @@ import org.springframework.web.bind.annotation.RestController;
 import cl.trabajo.Multa.dto.MultaDTO;
 import cl.trabajo.Multa.service.IMultaService;
 
-@RequestMapping("/api/crud/multa")
-@RestController
+@RequestMapping("/api/crud/multa") // Se usa para definir la ruta base de la API
+@RestController // Se usa para definir que esta clase es un controlador REST
 public class MultaController {
-    @Autowired
-    IMultaService multaService;
+    @Autowired // Para usar las funciones del servicio IPrestamoService
+    IMultaService multaService; 
 
-    @PostMapping
+    @PostMapping // Se usa para insertar una nueva multa
     public MultaDTO insertMultaDTO(@RequestBody MultaDTO multa) {
 
         MultaDTO aux = multaService.insertMultaDTO(multa);
         return aux;
     }
 
-    @PutMapping("/{idMulta}")
+    @PutMapping("/{idMulta}") // Se usa para actualizar un prestamo
     public MultaDTO updateMultaDTO(@PathVariable int idMulta, @RequestBody MultaDTO multa) {
         MultaDTO aux = multaService.updateMultaDTO(idMulta, multa);
         return aux;
     }
 
-    @DeleteMapping("/{idMulta}")
+    @DeleteMapping("/{idMulta}") // Se usa para eliminar un prestamo  
     public MultaDTO deleteMultaDTO(@PathVariable int idMulta) {
         MultaDTO aux = multaService.deleteMultaDTO(idMulta);
         return aux;
