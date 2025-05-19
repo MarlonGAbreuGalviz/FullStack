@@ -28,6 +28,5 @@ public class DonacionDTO {
     private int idLibro;
     @Column(name = "idUsuario")
     private int idUsuario;
-    //private LibroDTO libroClase;
-    //private UsuarioDTO usuarioClase;
+
 }
