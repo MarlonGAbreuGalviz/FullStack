@@ -1,8 +1,8 @@
 package cl.trabajo.Usuario.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Column; 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -17,6 +17,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+
+/**
+ * DTO (Data Transfer Object) para la entidad Usuario.
+  
+    hecho por: Juan Valenzuela
+ */
+ 
 public class UsuarioDTO {
     @Id
     private int idUsuario;
@@ -30,7 +37,8 @@ public class UsuarioDTO {
     private String usuario;
 
     @Column(name = "contrasena")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // Evita que la contraseña se muestre en el JSON de respuesta get
     private String contrasena;
+
 
 }

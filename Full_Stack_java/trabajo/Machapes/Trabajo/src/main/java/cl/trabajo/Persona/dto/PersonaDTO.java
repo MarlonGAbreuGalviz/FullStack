@@ -17,9 +17,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+/**
+ *  hecho por: Juan Valenzuela
+ */
 public class PersonaDTO {
     @Id
     private int rut;
+    @Column(name = "dv")
+    private String dv;
     @Column(name = "pNombre")
     private String pNombre;
     @Column(name = "sNombre")
@@ -33,5 +38,5 @@ public class PersonaDTO {
     @Column(name = "idUsuario")
     private int idUsuario;
     
-    //private UsuarioDTO usuarioClase;
+  
 }

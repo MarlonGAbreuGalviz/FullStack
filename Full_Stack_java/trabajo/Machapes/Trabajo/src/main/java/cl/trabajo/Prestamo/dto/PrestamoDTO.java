@@ -17,6 +17,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+/**
+ *  hecho por: Juan Valenzuela
+ */
 public class PrestamoDTO {
     @Id
     private int idPrestamo;
