@@ -15,27 +15,27 @@ import org.springframework.web.bind.annotation.RestController;
 import cl.trabajo.Prestamo.dto.PrestamoDTO;
 import cl.trabajo.Prestamo.service.IPrestamoService;
 
-@RequestMapping("/api/crud/prestamo") // Se usa para definir la ruta base de la API
-@RestController // Se usa para definir que esta clase es un controlador REST
+@RequestMapping("/api/crud/prestamo") 
+@RestController 
 public class PrestamoController {
 
-    @Autowired // Para usar las funciones del servicio IPrestamoService
+    @Autowired 
     IPrestamoService prestamoService;
 
-    @PostMapping // Se usa para insertar un nuevo prestamo
+    @PostMapping 
     public PrestamoDTO insertPrestamoDTO(@RequestBody PrestamoDTO prestamo) {
 
         PrestamoDTO aux = prestamoService.insertPrestamoDTO(prestamo);
         return aux;
     }
 
-    @PutMapping("/{idPrestamo}") // Se usa para actualizar un prestamo
+    @PutMapping("/{idPrestamo}") 
     public PrestamoDTO updatePrestamoDTO(@PathVariable int idPrestamo, @RequestBody PrestamoDTO prestamo) {
         PrestamoDTO aux = prestamoService.updatePrestamoDTO(idPrestamo, prestamo);
         return aux;
     }
 
-    @DeleteMapping("/{idPrestamo}") // Se usa para eliminar un prestamo     
+    @DeleteMapping("/{idPrestamo}")    
     public PrestamoDTO deletePrestamoDTO(@PathVariable int idPrestamo) {
         PrestamoDTO aux = prestamoService.deletePrestamoDTO(idPrestamo);
         return aux;

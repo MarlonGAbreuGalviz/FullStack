@@ -18,7 +18,7 @@ import cl.trabajo.Multa.service.IMultaService;
 @RequestMapping("/api/crud/multa") // Se usa para definir la ruta base de la API
 @RestController // Se usa para definir que esta clase es un controlador REST
 public class MultaController {
-    @Autowired // Para usar las funciones del servicio IPrestamoService
+    @Autowired // Para usar las funciones del servicio IPrestamoService / hace una inyección
     IMultaService multaService; 
 
     @PostMapping // Se usa para insertar una nueva multa
