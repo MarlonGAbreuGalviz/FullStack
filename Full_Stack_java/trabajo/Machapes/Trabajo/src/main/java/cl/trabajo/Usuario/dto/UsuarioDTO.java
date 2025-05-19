@@ -1,6 +1,6 @@
 package cl.trabajo.Usuario.dto;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,12 +30,7 @@ public class UsuarioDTO {
     private String usuario;
 
     @Column(name = "contrasena")
+    @JsonIgnore
     private String contrasena;
-
-    // Mostrar solo **** en las respuestas GET
-    @JsonGetter("contrasena")
-    public String getMaskedContrasena() {
-        return "*****";
-    }
 
 }
