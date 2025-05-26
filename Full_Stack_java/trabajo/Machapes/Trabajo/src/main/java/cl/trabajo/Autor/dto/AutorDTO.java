@@ -3,9 +3,17 @@
 package cl.trabajo.Autor.dto;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import cl.trabajo.Libro.dto.LibroDTO;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,8 +33,7 @@ public class AutorDTO {
     private String nombreAutor;
     @Column(name = "apellidoAutor")
     private String apellidoAutor;
-    @Column(name = "idLibro")
-    private int idLibro;
-    
-    // private List<LibroDTO> libros;
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<LibroDTO> libros;
 }
