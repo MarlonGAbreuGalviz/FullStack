@@ -1,6 +1,4 @@
-//Clase hecha x sebastian gonzalez
-
-package cl.trabajo.Ubicacion.dto;
+package cl.trabajo.Piso.dto;
 
 
 import jakarta.persistence.Column;
@@ -13,17 +11,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "ubicacion")
+@Table(name = "piso")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class UbicacionDTO {
+public class PisoDTO {
     @Id
-    private int idUbicacion;
+    private int idPiso;
     @Column(name = "piso")
     private int piso;
-    @Column(name = "estanteria")
-    private String estanteria;
-
 }
