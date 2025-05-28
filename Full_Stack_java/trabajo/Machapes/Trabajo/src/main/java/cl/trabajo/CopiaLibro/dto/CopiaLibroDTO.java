@@ -19,6 +19,10 @@ import lombok.Setter;
 public class CopiaLibroDTO {
     @Id
     private int idCopiaLibro;
-    @Column(name = "copiaLibro")
-    private int copiaLibro;
+    @Column(name = "nombre")
+    private int nombre;
+    @Column(name = "estado")
+    private int estado;
+    @Column(name = "numeroCopia")
+    private int numeroCopia;
 }
