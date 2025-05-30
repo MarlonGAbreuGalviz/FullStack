@@ -37,9 +37,14 @@ public class LibroDTO {
     private String titulo;
     @Column(name = "isbn")
     private int isbn;
+<<<<<<< HEAD
     @Column(name = "stock")
     private int stock;
 
+=======
+    @Column(name = "numeroCopia")
+    private int numeroCopia;
+>>>>>>> c4bb6e61acc5e2975eca872cc4cea577eed9943b
     @ManyToOne
     @JoinColumn(name = "idAutor")
     @JsonBackReference
