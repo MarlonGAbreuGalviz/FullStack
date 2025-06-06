@@ -1,4 +1,3 @@
-//clase hecha x sebastian
 package cl.trabajo.Rol.dto;
 
 

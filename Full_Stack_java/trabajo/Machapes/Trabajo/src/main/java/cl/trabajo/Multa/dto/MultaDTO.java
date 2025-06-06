@@ -15,9 +15,7 @@ import lombok.Setter;
 @Setter // Se usa para definir el setter
 @AllArgsConstructor // Se usa para definir el constructor con todos los atributos
 @NoArgsConstructor // Se usa para definir el constructor sin atributos
-/**
- *  hecho por: Juan Valenzuela
- */
+
 public class MultaDTO {
     @Id
     private int idMulta;
