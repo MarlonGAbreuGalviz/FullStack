@@ -23,20 +23,19 @@ public class UsuarioController {
 
     @PostMapping
     public UsuarioDTO insertUsuarioDTO(@RequestBody UsuarioDTO usuario) {
-
         UsuarioDTO aux = usuarioService.insertUsuariDto(usuario);
+        return usuarioService.getByidUsuario(aux.getIdUsuario()); // recarga desde BD
+    }
+
+    @PutMapping("/{idUsuario}")
+    public UsuarioDTO updateUsuarioDTO(@PathVariable int idUsuario, @RequestBody UsuarioDTO usuario) {
+        UsuarioDTO aux = usuarioService.updateUsuarioDTO(idUsuario, usuario);
         return aux;
     }
 
-    @PutMapping("/{idRol}")
-    public UsuarioDTO updateUsuarioDTO(@PathVariable int idRol, @RequestBody UsuarioDTO usuario) {
-        UsuarioDTO aux = usuarioService.updateUsuarioDTO(idRol, usuario);
-        return aux;
-    }
-
-    @DeleteMapping("/{idRol}")
-    public UsuarioDTO deleteUsuarioDTO(@PathVariable int idRol) {
-        UsuarioDTO aux = usuarioService.deleteUsuarioDTO(idRol);
+    @DeleteMapping("/{idUsuario}")
+    public UsuarioDTO deleteUsuarioDTO(@PathVariable int idUsuario) {
+        UsuarioDTO aux = usuarioService.deleteUsuarioDTO(idUsuario);
         return aux;
     }
 
@@ -45,8 +44,8 @@ public class UsuarioController {
         return usuarioService.getAll();
     }
 
-    @GetMapping("/{idRol}")
-    public UsuarioDTO getByidRol(@PathVariable int idRol) {
-        return usuarioService.getByidRol(idRol);
+    @GetMapping("/{idUsuario}")
+    public UsuarioDTO getByidRol(@PathVariable int idUsuario) {
+        return usuarioService.getByidUsuario(idUsuario);
     }
 }
