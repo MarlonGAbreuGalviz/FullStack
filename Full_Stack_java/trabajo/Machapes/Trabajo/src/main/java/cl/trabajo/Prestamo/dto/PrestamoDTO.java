@@ -16,7 +16,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table(name = "prestamo")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 /**
  *  hecho por: Juan Valenzuela
  */

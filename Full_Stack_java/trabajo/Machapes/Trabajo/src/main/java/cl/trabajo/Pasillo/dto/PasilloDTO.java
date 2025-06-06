@@ -23,7 +23,7 @@ public class PasilloDTO {
     @Id
     private int idPasillo;
     @Column(name = "pasillo")
-    private int pasillo;
+    private String pasillo;
     @OneToOne
     @JoinColumn(name = "idPiso")
     private PisoDTO piso;

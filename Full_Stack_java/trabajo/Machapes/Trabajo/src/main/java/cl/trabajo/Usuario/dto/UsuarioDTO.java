@@ -15,8 +15,6 @@ import lombok.*;
 
 /**
  * DTO (Data Transfer Object) para la entidad Usuario.
-  
-    hecho por: Juan Valenzuela
  */
  
 public class UsuarioDTO {
