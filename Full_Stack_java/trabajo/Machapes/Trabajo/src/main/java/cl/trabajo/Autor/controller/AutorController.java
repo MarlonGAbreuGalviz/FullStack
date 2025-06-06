@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+import org.springframework.validation.BindingResult;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+
 import cl.trabajo.Autor.dto.AutorDTO;
 import cl.trabajo.Autor.service.IAutorService;
 
@@ -21,18 +26,38 @@ public class AutorController {
     @Autowired
     IAutorService autorService;
 
-    @PostMapping
+    /*@PostMapping
     public AutorDTO insertAutorDTO(@RequestBody AutorDTO autor) {
 
         AutorDTO aux = autorService.insertAutorDTO(autor);
         return aux;
+    }*/
+
+    @PostMapping
+    public ResponseEntity<?> insertAutorDTO(@Valid @RequestBody AutorDTO autor, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
+        }
+    
+        AutorDTO aux = autorService.insertAutorDTO(autor);
+        return ResponseEntity.ok(aux);
     }
 
-    @PutMapping("/{idAutor}")
+    /*@PutMapping("/{idAutor}")
     public AutorDTO updateAutorDTO(@PathVariable int idAutor, @RequestBody AutorDTO autor) {
         AutorDTO aux = autorService.updateAutorDTO(idAutor, autor);
         return aux;
+    }*/
+
+    @PutMapping("/{idAutor}")
+    public ResponseEntity<?> updateAutorDTO(@PathVariable int idAutor, @Valid @RequestBody AutorDTO autor, BindingResult bindingResult) {
+    if (bindingResult.hasErrors()) {
+        return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
     }
+
+    AutorDTO aux = autorService.updateAutorDTO(idAutor, autor);
+    return ResponseEntity.ok(aux);
+}
 
     @DeleteMapping("/{idAutor}")
     public AutorDTO deleteAutorDTO(@PathVariable int idAutor) {
@@ -42,6 +67,7 @@ public class AutorController {
 
     @GetMapping
     public List<AutorDTO> getAll() {
+        System.out.println("holllllllllllllllllllll");
         return autorService.getAll();
     }
 
