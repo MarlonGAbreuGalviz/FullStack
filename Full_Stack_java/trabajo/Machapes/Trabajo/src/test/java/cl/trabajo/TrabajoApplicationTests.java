@@ -6,22 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
 
 //Json Handler
-import org.springframework.http.MediaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 //Cleaner
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+
 
 //Libreria de Test
-import org.hamcrest.Matchers;
 
 //Carpeta a Testear
-import cl.trabajo.Autor.dto.AutorDTO;
 
 @AutoConfigureMockMvc
 @SpringBootTest
@@ -34,14 +32,12 @@ class TrabajoApplicationTests {
     private ObjectMapper objectMapper; // Transformar Objetos a JSON
 
 	@Test
-    void testValidacionesGeneralAutor() throws Exception {
-        AutorDTO Autor = new AutorDTO(); // Sin valores
+    public void whenGetByIdMulta_NotFound_thenReturns404() throws Exception {
+        int idNoExistente = 999;
 
-        mockMvc.perform(post("/api/crud/autor")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(Autor)))
-                .andExpect(status().isBadRequest()) // Esperamos un 400 debido a validaciones fallidas
-                .andExpect(jsonPath("$").exists()); // Verifica que hay mensajes de error
+        mockMvc.perform(get("/api/crud/multa" + idNoExistente))  // Cambia "/ruta-multa/" por tu endpoint real
+            .andExpect(status().isNotFound())
+            .andExpect(content().string("Multa con ID " + idNoExistente + " no encontrada"));
     }
 
 }

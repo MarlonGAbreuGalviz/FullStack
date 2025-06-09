@@ -1,12 +1,19 @@
 package cl.trabajo.Multa.exception;
 
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+public class MultaException extends RuntimeException{
+    
 
+    public MultaException(String message) {
+        super(message);
+    }
 
+    // Constructor que recibe mensaje y causa (otra excepción)
+    public MultaException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
-
-@RestControllerAdvice
-public class MultaException {
-
-   
+    // Constructor que recibe solo causa
+    public MultaException(Throwable cause) {
+        super(cause);
+    }
 }

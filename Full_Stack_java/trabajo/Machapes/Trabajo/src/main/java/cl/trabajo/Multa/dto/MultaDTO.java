@@ -44,4 +44,6 @@ public class MultaDTO {
     @JoinColumn(name = "idCopiaLibro")
     @JsonIgnoreProperties({"estado", "numeroCopia", "libro"})
     private CopiaLibroDTO copiaLibro;
+
+    
 }
