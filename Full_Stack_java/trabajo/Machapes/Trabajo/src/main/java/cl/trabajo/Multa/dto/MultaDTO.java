@@ -1,13 +1,14 @@
 package cl.trabajo.Multa.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor; 
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import cl.trabajo.CopiaLibro.dto.CopiaLibroDTO;
+import cl.trabajo.Usuario.dto.UsuarioDTO;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
+
 
 @Entity // Se usa para definir la entidad
 @Table(name = "multa")  // Se usa para definir la tabla
@@ -20,11 +21,26 @@ import lombok.Setter;
  */
 public class MultaDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
+    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)
     private int idMulta;
+
+    @NotBlank(message = "El tipo de multa no puede estar vacío")
     @Column(name = "tipoMulta")
     private String tipoMulta;
+
+    @Positive(message = "El monto debe ser mayor a cero")
     @Column(name = "monto")
     private int monto;
-    @Column(name = "rut")
-    private int rut;
+    @NotNull(message = "Debe asignarse un usuario a la multa")
+    @ManyToOne
+    @JsonIgnoreProperties({"email", "usuario", "rol"})
+    @JoinColumn(name = "idUsuario")
+    private UsuarioDTO usuario;
+    
+
+    @ManyToOne
+    @JoinColumn(name = "idCopiaLibro")
+    @JsonIgnoreProperties({"estado", "numeroCopia", "libro"})
+    private CopiaLibroDTO copiaLibro;
 }

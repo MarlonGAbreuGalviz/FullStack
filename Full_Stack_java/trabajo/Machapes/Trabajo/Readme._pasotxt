@@ -5,3 +5,5 @@
     jdbc => oracle
     lombo=> Getter Setter otros 
     persistencia
+
+JP: devolucion, multa, prestamo, donacion, usuario

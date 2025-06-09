@@ -17,9 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-/**
- *  hecho por: Juan Valenzuela
- */
+
 public class PersonaDTO {
     @Id
     private int rut;

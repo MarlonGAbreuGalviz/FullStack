@@ -2,35 +2,52 @@ package cl.trabajo.Devolucion.dto;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import cl.trabajo.Prestamo.dto.PrestamoDTO;
+import cl.trabajo.Usuario.dto.UsuarioDTO;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
+
+
 
 @Entity
 @Table(name = "devolucion")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
+/**
+ * Hecho por: Juan Valenzuela
+ */
 public class DevolucionDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "devolucion_seq")
+    @SequenceGenerator(name = "devolucion_seq", sequenceName = "devolucion_seq", allocationSize = 1)
     private int idDevolucion;
+
+
     
-    @Column(name = "devuelto")
     private boolean devuelto;
 
-    @Column(name = "fecDevolucion")
+    @NotNull(message = "La fecha de devolución es obligatoria")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate fecDevolucion;
 
-    @Column(name = "idPrestamo")
-    private int idPrestamo;
+    
+    @NotNull(message = "El préstamo asociado es obligatorio")
+    @OneToOne
+    @JsonBackReference
+    @JoinColumn(name = "idPrestamo")
+    private PrestamoDTO prestamo;
 
-    @Column(name = "idUsuario")
-    private int idUsuario;
+    
+    @NotNull(message = "El usuario asociado es obligatorio")
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    @JsonIgnoreProperties({"email", "usuario", "rol"})
+    private UsuarioDTO usuario;
 
 }

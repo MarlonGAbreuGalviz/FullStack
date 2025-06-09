@@ -1,5 +1,3 @@
-//Clase hecha por: Marlon Abreu
-
 package cl.trabajo.Categoria.dto;
 
 import jakarta.persistence.Column;

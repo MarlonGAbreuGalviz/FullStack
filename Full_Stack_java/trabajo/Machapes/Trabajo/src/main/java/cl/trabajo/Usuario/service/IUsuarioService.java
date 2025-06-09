@@ -13,5 +13,5 @@ public interface IUsuarioService {
 
     List<UsuarioDTO> getAll();
 
-    UsuarioDTO getByidRol(int idRol);
+    UsuarioDTO getByidUsuario(int idUsuario);
 }
