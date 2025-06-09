@@ -40,11 +40,8 @@ public class LibroDTO {
     @Column(name = "stock")
     private int stock;
 
-<<<<<<< HEAD
     @Column(name = "numeroCopia")
     private int numeroCopia;
-=======
->>>>>>> 0e899c6a8055bd40abbdd8becd0c12c6196d0d99
     @ManyToOne
     @JoinColumn(name = "idAutor")
     @JsonBackReference

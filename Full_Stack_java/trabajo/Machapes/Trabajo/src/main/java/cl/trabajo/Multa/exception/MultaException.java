@@ -1,10 +1,12 @@
 package cl.trabajo.Multa.exception;
 
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 
-public class MultaException extends RuntimeException{
 
-    public MultaException(String mensaje) {
-        super(mensaje);
-    }
+
+@RestControllerAdvice
+public class MultaException {
+
+   
 }

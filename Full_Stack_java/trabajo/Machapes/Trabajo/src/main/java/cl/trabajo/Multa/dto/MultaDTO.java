@@ -32,6 +32,7 @@ public class MultaDTO {
     @Positive(message = "El monto debe ser mayor a cero")
     @Column(name = "monto")
     private int monto;
+    
     @NotNull(message = "Debe asignarse un usuario a la multa")
     @ManyToOne
     @JsonIgnoreProperties({"email", "usuario", "rol"})
