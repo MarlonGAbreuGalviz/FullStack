@@ -32,8 +32,7 @@ public class CopiaLibroDTO {
     @JoinColumn(name = "idLibro")
     @JsonBackReference
     private LibroDTO libro;
-    @Column(name = "nombre")
-    private int nombre;
+    
     @Column(name = "estado")
     private int estado;
     @Column(name = "numeroCopia")

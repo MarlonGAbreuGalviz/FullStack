@@ -1,6 +1,8 @@
 package cl.trabajo.Usuario.dto;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import cl.trabajo.Rol.dto.RolDTO;
 import jakarta.persistence.*;
@@ -16,7 +18,8 @@ import lombok.*;
 /**
  * DTO (Data Transfer Object) para la entidad Usuario.
  */
- 
+
+
 public class UsuarioDTO {
 
     @Id

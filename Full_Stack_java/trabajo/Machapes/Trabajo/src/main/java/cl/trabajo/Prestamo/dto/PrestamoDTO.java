@@ -9,6 +9,7 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
@@ -41,6 +42,7 @@ public class PrestamoDTO {
     @NotNull(message = "Debe asignarse un usuario al préstamo")
     @ManyToOne
     @JoinColumn(name = "idUsuario")
+    @JsonIgnoreProperties({"email", "usuario", "rol"})
     private UsuarioDTO usuario;
 
 

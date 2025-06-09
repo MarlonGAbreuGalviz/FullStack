@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import cl.trabajo.Prestamo.dto.PrestamoDTO;
 import cl.trabajo.Usuario.dto.UsuarioDTO;
@@ -46,6 +47,7 @@ public class DevolucionDTO {
     @NotNull(message = "El usuario asociado es obligatorio")
     @ManyToOne
     @JoinColumn(name = "idUsuario")
+    @JsonIgnoreProperties({"email", "usuario", "rol"})
     private UsuarioDTO usuario;
 
 }
