@@ -67,7 +67,6 @@ public class AutorController {
 
     @GetMapping
     public List<AutorDTO> getAll() {
-        System.out.println("holllllllllllllllllllll");
         return autorService.getAll();
     }
 

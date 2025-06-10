@@ -1,3 +1,5 @@
+//Programado y manejado por Sebastian Gonzalez
+
 package cl.trabajo.Usuario.dto;
 
 

@@ -1,10 +1,8 @@
+//Programado y manejado por Sebastian Gonzalez
+
 package cl.trabajo.Autor.dto;
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e899c6a8055bd40abbdd8becd0c12c6196d0d99
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -45,7 +43,7 @@ public class AutorDTO {
     @Size(max = 100, message = "apellidoAutor must be at most 100 characters")
     private String apellidoAutor;
     
-    /*@OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<LibroDTO> libros;*/
+    private List<LibroDTO> libros;
 }
