@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class PersonaExceptionHandler {
      @ExceptionHandler(PersonaException.class)
-    public ResponseEntity<String> handleMultaException(PersonaException ex) {
+    public ResponseEntity<String> handlePersonaException(PersonaException ex) {
         // Responde con código 404 NOT FOUND y el mensaje de la excepción
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }

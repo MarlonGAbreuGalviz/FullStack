@@ -1,4 +1,3 @@
-
 package cl.trabajo;
 
 import org.springframework.boot.SpringApplication;
