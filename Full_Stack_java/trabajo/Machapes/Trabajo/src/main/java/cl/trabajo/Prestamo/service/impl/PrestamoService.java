@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import cl.trabajo.Prestamo.dto.PrestamoDTO;
 import cl.trabajo.Prestamo.repository.PrestamoRepository;
 import cl.trabajo.Prestamo.service.IPrestamoService;
+import cl.trabajo.exception.NotFoundException;
 
 @Service
 public class PrestamoService implements IPrestamoService {
@@ -23,13 +24,18 @@ public class PrestamoService implements IPrestamoService {
 
     @Override
     public PrestamoDTO updatePrestamoDTO(int idPrestamo, PrestamoDTO prestamo) {
+        if (!repo.existsById(idPrestamo)) {
+            throw new NotFoundException("Préstamo con ID " + idPrestamo + " no encontrado");
+        }
         prestamo.setIdPrestamo(idPrestamo);
-        PrestamoDTO aux = repo.save(prestamo);
-        return aux;
+        return repo.save(prestamo);
     }
 
     @Override
     public PrestamoDTO deletePrestamoDTO(int idPrestamo) {
+        if (!repo.existsById(idPrestamo)) {
+            throw new NotFoundException("Préstamo con ID " + idPrestamo + " no encontrado");
+        }
         repo.deleteById(idPrestamo);
         return null;
     }
@@ -43,7 +49,8 @@ public class PrestamoService implements IPrestamoService {
 
     @Override
     public PrestamoDTO getByidPrestamo(int idPrestamo) {
-        return repo.findById(idPrestamo).get();
+        return repo.findById(idPrestamo)
+                .orElseThrow(() -> new NotFoundException("Préstamo con ID " + idPrestamo + " no encontrado"));
     }
 
 }

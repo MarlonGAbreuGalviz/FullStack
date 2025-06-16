@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cl.trabajo.Devolucion.dto.DevolucionDTO;
 import cl.trabajo.Devolucion.service.IDevolucionService;
+import jakarta.validation.Valid;
 
 @RequestMapping("/api/crud/devolucion")
 @RestController
@@ -22,14 +23,14 @@ public class DevolucionController {
     IDevolucionService devolucionService;
 
     @PostMapping
-    public DevolucionDTO insertDevolucionDTO(@RequestBody DevolucionDTO devolucion) {
+    public DevolucionDTO insertDevolucionDTO(@Valid @RequestBody DevolucionDTO devolucion) {
 
         DevolucionDTO aux = devolucionService.insertDevolucionDTO(devolucion);
         return aux;
     }
 
     @PutMapping("/{idDevolucion}")
-    public DevolucionDTO updateDevolucionDTO(@PathVariable int idDevolucion, @RequestBody DevolucionDTO devolucion) {
+    public DevolucionDTO updateDevolucionDTO(@PathVariable int idDevolucion,@Valid @RequestBody DevolucionDTO devolucion) {
         DevolucionDTO aux = devolucionService.updateDevolucionDTO(idDevolucion, devolucion);
         return aux;
     }

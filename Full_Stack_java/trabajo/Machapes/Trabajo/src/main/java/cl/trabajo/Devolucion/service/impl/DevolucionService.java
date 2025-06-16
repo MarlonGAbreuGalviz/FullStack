@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import cl.trabajo.Devolucion.dto.DevolucionDTO;
 import cl.trabajo.Devolucion.repository.DevolucionRepository;
 import cl.trabajo.Devolucion.service.IDevolucionService;
+import cl.trabajo.exception.NotFoundException;
 
 @Service
 public class DevolucionService implements IDevolucionService {
@@ -23,13 +24,18 @@ public class DevolucionService implements IDevolucionService {
 
     @Override
     public DevolucionDTO updateDevolucionDTO(int idDevolucion, DevolucionDTO devolucion) {
+        if (!repo.existsById(idDevolucion)) {
+            throw new NotFoundException("Devolución con ID " + idDevolucion + " no encontrada");
+        }
         devolucion.setIdDevolucion(idDevolucion);
-        DevolucionDTO aux = repo.save(devolucion);
-        return aux;
+        return repo.save(devolucion);
     }
 
     @Override
     public DevolucionDTO deleteDevolucionDTO(int idDevolucion) {
+        if (!repo.existsById(idDevolucion)) {
+            throw new NotFoundException("Devolución con ID " + idDevolucion + " no encontrada");
+        }
         repo.deleteById(idDevolucion);
         return null;
     }
@@ -43,7 +49,8 @@ public class DevolucionService implements IDevolucionService {
 
     @Override
     public DevolucionDTO getByidDevolucion(int idDevolucion) {
-        return repo.findById(idDevolucion).get();
+        return repo.findById(idDevolucion)
+                .orElseThrow(() -> new NotFoundException("Devolución con ID " + idDevolucion + " no encontrada"));
     }
 
 }

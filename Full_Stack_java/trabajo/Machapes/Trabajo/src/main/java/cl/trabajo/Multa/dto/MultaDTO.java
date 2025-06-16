@@ -1,6 +1,5 @@
 package cl.trabajo.Multa.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import cl.trabajo.CopiaLibro.dto.CopiaLibroDTO;

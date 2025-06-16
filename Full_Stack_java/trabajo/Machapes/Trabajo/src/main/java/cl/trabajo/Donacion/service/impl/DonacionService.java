@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import cl.trabajo.Donacion.dto.DonacionDTO;
 import cl.trabajo.Donacion.repository.DonacionRepository;
 import cl.trabajo.Donacion.service.IDonacionService;
+import cl.trabajo.exception.NotFoundException;
 
 @Service
 public class DonacionService implements IDonacionService {
@@ -30,6 +31,9 @@ public class DonacionService implements IDonacionService {
 
     @Override
     public DonacionDTO deleteDonacionDTO(int idDonacion) {
+        if (!repo.existsById(idDonacion)) {
+            throw new NotFoundException("Donación con ID " + idDonacion + " no encontrada");
+        }
         repo.deleteById(idDonacion);
         return null;
     }
@@ -43,7 +47,8 @@ public class DonacionService implements IDonacionService {
 
     @Override
     public DonacionDTO getByidDonacion(int idDonacion) {
-        return repo.findById(idDonacion).get();
+        return repo.findById(idDonacion)
+               .orElseThrow(() -> new NotFoundException("Donación con ID " + idDonacion + " no encontrada"));
     }
 
 }

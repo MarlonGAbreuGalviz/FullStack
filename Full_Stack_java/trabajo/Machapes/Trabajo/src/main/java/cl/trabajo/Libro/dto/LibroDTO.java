@@ -41,7 +41,7 @@ public class LibroDTO {
     private int stock;
 
     @Column(name = "numeroCopia")
-    private int numeroCopia;
+    private Integer numeroCopia;
     @ManyToOne
     @JoinColumn(name = "idAutor")
     @JsonBackReference

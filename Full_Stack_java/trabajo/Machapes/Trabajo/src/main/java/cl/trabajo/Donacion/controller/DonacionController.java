@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cl.trabajo.Donacion.dto.DonacionDTO;
 import cl.trabajo.Donacion.service.IDonacionService;
+import jakarta.validation.Valid;
 
 @RequestMapping("/api/crud/donacion")
 @RestController
@@ -22,14 +23,12 @@ public class DonacionController {
     IDonacionService donacionService;
 
     @PostMapping
-    public DonacionDTO insertDonacionDTO(@RequestBody DonacionDTO donacion) {
-
-        DonacionDTO aux = donacionService.insertDonacionDTO(donacion);
-        return aux;
+    public DonacionDTO insertDonacionDTO(@Valid @RequestBody DonacionDTO donacion) {
+        return donacionService.insertDonacionDTO(donacion);
     }
 
     @PutMapping("/{idDonacion}")
-    public DonacionDTO updateDonacionDTO(@PathVariable int idDonacion, @RequestBody DonacionDTO donacion) {
+    public DonacionDTO updateDonacionDTO(@PathVariable int idDonacion,@Valid @RequestBody DonacionDTO donacion) {
         DonacionDTO aux = donacionService.updateDonacionDTO(idDonacion, donacion);
         return aux;
     }

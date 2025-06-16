@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.trabajo.Multa.dto.MultaDTO;
-import cl.trabajo.Multa.exception.MultaException;
 import cl.trabajo.Multa.repository.MultaRepository;
 import cl.trabajo.Multa.service.IMultaService;
+import cl.trabajo.exception.NotFoundException;
 
 @Service
 public class MultaService implements IMultaService {
@@ -24,13 +24,19 @@ public class MultaService implements IMultaService {
 
     @Override
     public MultaDTO updateMultaDTO(int idMulta, MultaDTO multa) {
+        if(!repo.existsById(idMulta)) {
+            throw new NotFoundException("Multa con ID " + idMulta + " no encontrada");
+        }
+
         multa.setIdMulta(idMulta);
-        MultaDTO aux = repo.save(multa);
-        return aux;
+        return repo.save(multa);
     }
 
     @Override
     public MultaDTO deleteMultaDTO(int idMulta) {
+        if(!repo.existsById(idMulta)) {
+            throw new NotFoundException("Multa con ID " + idMulta + " no encontrada");
+        }
         repo.deleteById(idMulta);
         return null;
     }
@@ -45,6 +51,6 @@ public class MultaService implements IMultaService {
     @Override
     public MultaDTO getByidMulta(int idMulta) {
         return repo.findById(idMulta)
-                .orElseThrow(() -> new MultaException("Multa con ID " + idMulta + " no encontrada"));
+            .orElseThrow(() -> new NotFoundException("Multa con ID " + idMulta + " no encontrada"));
     }
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cl.trabajo.Prestamo.dto.PrestamoDTO;
 import cl.trabajo.Prestamo.service.IPrestamoService;
+import jakarta.validation.Valid;
 
 @RequestMapping("/api/crud/prestamo") 
 @RestController 
@@ -23,14 +24,14 @@ public class PrestamoController {
     IPrestamoService prestamoService;
 
     @PostMapping 
-    public PrestamoDTO insertPrestamoDTO(@RequestBody PrestamoDTO prestamo) {
+    public PrestamoDTO insertPrestamoDTO(@Valid @RequestBody PrestamoDTO prestamo) {
 
         PrestamoDTO aux = prestamoService.insertPrestamoDTO(prestamo);
         return aux;
     }
 
     @PutMapping("/{idPrestamo}") 
-    public PrestamoDTO updatePrestamoDTO(@PathVariable int idPrestamo, @RequestBody PrestamoDTO prestamo) {
+    public PrestamoDTO updatePrestamoDTO(@PathVariable int idPrestamo,@Valid @RequestBody PrestamoDTO prestamo) {
         PrestamoDTO aux = prestamoService.updatePrestamoDTO(idPrestamo, prestamo);
         return aux;
     }

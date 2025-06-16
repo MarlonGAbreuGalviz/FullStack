@@ -3,30 +3,47 @@ package cl.trabajo.Donacion.dto;
 import java.time.LocalDate;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import com.fasterxml.jackson.annotation.*;
+
+import cl.trabajo.Libro.dto.LibroDTO;
+import cl.trabajo.Usuario.dto.UsuarioDTO;
+
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Entity
 @Table(name = "donacion")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 
 public class DonacionDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "donacion_seq")
+    @SequenceGenerator(name = "donacion_seq", sequenceName = "donacion_seq", allocationSize = 1)
     private int idDonacion;
-    @Column(name = "fecDonacion")
+
+
+    @NotNull(message = "La fecha de donación es obligatoria")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate fecDonacion;
-    @Column(name = "idLibro")
-    private int idLibro;
-    @Column(name = "idUsuario")
-    private int idUsuario;
+
+
+    @NotNull(message = "El libro asociado es obligatorio")
+    @ManyToOne
+    @JoinColumn(name = "idLibro")
+    @JsonIgnoreProperties({"titulo", "isbn", "stock", "numeroCopia", "CopiaLibro", "copiaLibro"})
+    private LibroDTO libro;
+
+
+    @NotNull(message = "El usuario donante es obligatorio")
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    @JsonIgnoreProperties({"email", "usuario", "rol"}) 
+    private UsuarioDTO usuario;
 
 }
