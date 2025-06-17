@@ -1,10 +1,9 @@
-//Programado y manejado por Sebastian Gonzalez
-
 package cl.trabajo.Autor.dto;
 
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import cl.trabajo.Libro.dto.LibroDTO;
@@ -12,6 +11,8 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
@@ -46,4 +47,10 @@ public class AutorDTO {
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<LibroDTO> libros;
+
+    /*@ManyToOne
+    @JoinColumn(name = "idLibro")
+    @JsonBackReference
+    private LibroDTO libro;*/
+
 }

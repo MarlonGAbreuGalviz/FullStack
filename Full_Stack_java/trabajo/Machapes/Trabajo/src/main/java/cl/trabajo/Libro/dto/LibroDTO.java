@@ -13,11 +13,14 @@ import jakarta.persistence.CascadeType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,16 +35,17 @@ import lombok.Setter;
 
 public class LibroDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idLibro;
-    @Column(name = "titulo")
-    private String titulo;
-    @Column(name = "isbn")
-    private int isbn;
-    @Column(name = "stock")
-    private int stock;
 
-    @Column(name = "numeroCopia")
-    private Integer numeroCopia;
+    @Column(name = "titulo")
+    @NotNull(message = "titulo is required")
+    private String titulo;
+
+    @Column(name = "isbn")
+    @NotNull(message = "isbn is required")
+    private String isbn;
+
     @ManyToOne
     @JoinColumn(name = "idAutor")
     @JsonBackReference
@@ -50,4 +54,6 @@ public class LibroDTO {
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<CopiaLibroDTO> CopiaLibro;
+
+    
 }
