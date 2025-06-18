@@ -36,7 +36,7 @@ public class CopiaLibroDTO {
     private boolean copiaActiva;
 
     @ManyToOne
-    @JoinColumn(name = "idEstanteria")
+    @JoinColumn(name = "idEstanteria", nullable = false)
     @JsonBackReference ("estanteria-copias")
     private EstanteriaDTO estanteria;
 

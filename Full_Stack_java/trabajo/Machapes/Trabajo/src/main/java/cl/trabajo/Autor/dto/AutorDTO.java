@@ -51,7 +51,7 @@ public class AutorDTO {
     private String apellidoAutor;
     
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference ("autor-libro") 
+    @JsonManagedReference ("autor-libro")
     private List<LibroDTO> libros;
 
     /*@ManyToOne

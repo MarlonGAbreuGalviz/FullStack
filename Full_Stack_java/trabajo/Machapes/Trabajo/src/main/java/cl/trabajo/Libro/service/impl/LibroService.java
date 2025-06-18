@@ -23,9 +23,13 @@ public class LibroService implements ILibroService {
 
     @Override
     public LibroDTO updateLibroDTO(int idLibro, LibroDTO libro) {
-        libro.setIdLibro(idLibro);
-        LibroDTO aux = repo.save(libro);
-        return aux;
+    LibroDTO libroExistente = repo.findById(idLibro)
+        .orElseThrow(() -> new RuntimeException("Libro no encontrado"));
+        libroExistente.setTitulo(libro.getTitulo());
+        libroExistente.setIsbn(libro.getIsbn());
+        libroExistente.setAutor(libro.getAutor());
+
+        return repo.save(libroExistente);
     }
 
     @Override
@@ -43,6 +47,7 @@ public class LibroService implements ILibroService {
 
     @Override
     public LibroDTO getByidLibro(int idLibro) {
-        return repo.findById(idLibro).get();
+        return repo.findById(idLibro)
+        .orElseThrow(() -> new RuntimeException("Libro no encontrado con ID " + idLibro));
     }
 }

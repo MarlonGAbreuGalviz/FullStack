@@ -4,10 +4,15 @@ package cl.trabajo.Persona.dto;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import cl.trabajo.Usuario.dto.UsuarioDTO;
 // Imports Jakarta para estructurar tabla
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 //Import Jakarta Validadores
@@ -35,6 +40,7 @@ import lombok.Setter;
 public class PersonaDTO {
     @Id
     @NotNull(message = "Es requerido asignar una ID")
+    @Positive(message = "El ID de usuario debe ser un número positivo")
     @Digits(integer = 10, fraction = 0, message = "La ID debe tener hasta 10 dígitos y sin decimales") //Integer = 10 (max 10 digitos enteros), fraction = 0 (max 0 digitos decimales)
     private Integer rut;
 
@@ -58,7 +64,9 @@ public class PersonaDTO {
     @NotNull(message = "La fecha de nacimiento es obligatoria")
     private Date fecNacimiento;
 
-    @NotNull(message = "El ID de usuario es obligatorio")
-    @Positive(message = "El ID de usuario debe ser un número positivo")
-    private Integer idUsuario;
+    @OneToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
+    @JsonManagedReference
+    @NotNull(message = "El usuario es obligatorio")
+    private UsuarioDTO usuario;
 }

@@ -17,9 +17,11 @@ public class AutorService implements IAutorService {
 
     @Override
     public AutorDTO insertAutorDTO(AutorDTO autor) {
-        AutorDTO aux = repo.save(autor);
-        return aux;
+    if (autor.getLibros() != null) {
+        autor.getLibros().forEach(libro -> libro.setAutor(autor));
     }
+    return repo.save(autor);
+}
 
     @Override
     public AutorDTO updateAutorDTO(int idAutor, AutorDTO autor) {

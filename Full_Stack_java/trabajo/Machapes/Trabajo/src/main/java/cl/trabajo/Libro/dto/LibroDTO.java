@@ -53,6 +53,11 @@ public class LibroDTO {
     @JsonBackReference ("autor-libro") 
     private AutorDTO autor;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria",nullable = false)
+    @JsonBackReference ("categoria-libro") 
+    private AutorDTO categoria;
+
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference ("libro-copias")
     private List<CopiaLibroDTO> copiaLibro;

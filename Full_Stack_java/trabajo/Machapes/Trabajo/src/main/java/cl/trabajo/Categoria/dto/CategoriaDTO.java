@@ -2,10 +2,17 @@
 
 package cl.trabajo.Categoria.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,11 +26,17 @@ import lombok.Setter;
 @Setter
 public class CategoriaDTO {
     @Id
+    @NotNull(message = "Id de Categoria Necesario")
     private int idCategoria;
+
+    
     @Column(name = "categoria")
+    @NotBlank(message = "Nombre de Categoria Necesaria")
+    @Size(max = 30, message = "La Categoria solo peude ser de 30 Caracteres")
     private String categoria;
-    @Column(name = "idLibro")
+    
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference ("categoria-libro")
     private int idLibro;
-    //List<LibroDTO> libros;
     
 }
