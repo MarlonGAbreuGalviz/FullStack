@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 
 import cl.trabajo.Autor.dto.AutorDTO;
 import cl.trabajo.Autor.service.IAutorService;
+import cl.trabajo.Libro.dto.LibroDTO;
 
 @RequestMapping("/api/crud/autor")
 @RestController
@@ -33,15 +34,24 @@ public class AutorController {
         return aux;
     }*/
 
-    @PostMapping
-    public ResponseEntity<?> insertAutorDTO(@Valid @RequestBody AutorDTO autor, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
-        }
-    
-        AutorDTO aux = autorService.insertAutorDTO(autor);
-        return ResponseEntity.ok(aux);
+@PostMapping
+public ResponseEntity<?> insertAutorDTO(
+    @Valid @RequestBody AutorDTO autorDTO, 
+    BindingResult bindingResult) {
+
+    if (bindingResult.hasErrors()) {
+        return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
     }
+
+    // Establece la relación bidireccional
+    if (autorDTO.getLibros() != null) {
+        autorDTO.getLibros().forEach(libro -> libro.setAutor(autorDTO));
+    }
+
+    AutorDTO savedAutor = autorService.insertAutorDTO(autorDTO);
+    return ResponseEntity.ok(savedAutor);
+}
+
 
     /*@PutMapping("/{idAutor}")
     public AutorDTO updateAutorDTO(@PathVariable int idAutor, @RequestBody AutorDTO autor) {

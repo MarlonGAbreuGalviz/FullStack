@@ -10,11 +10,14 @@ import cl.trabajo.Libro.dto.LibroDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -31,7 +34,8 @@ import lombok.Setter;
 @Setter
 public class AutorDTO {
     @Id
-    @NotNull(message = "idAutor is required")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
+    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1) 
     private int idAutor;
 
     @Column(name = "nombreAutor")
@@ -45,7 +49,7 @@ public class AutorDTO {
     private String apellidoAutor;
     
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonManagedReference ("autor-libros") 
     private List<LibroDTO> libros;
 
     /*@ManyToOne

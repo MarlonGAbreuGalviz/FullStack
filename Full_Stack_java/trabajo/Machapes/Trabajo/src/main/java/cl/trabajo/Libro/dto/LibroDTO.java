@@ -19,6 +19,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,8 @@ import lombok.Setter;
 
 public class LibroDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
+    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)    
     private int idLibro;
 
     @Column(name = "titulo")
@@ -48,12 +50,12 @@ public class LibroDTO {
 
     @ManyToOne
     @JoinColumn(name = "idAutor")
-    @JsonBackReference
+    @JsonBackReference ("autor-libros") 
     private AutorDTO autor;
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<CopiaLibroDTO> CopiaLibro;
 
-    
+
 }

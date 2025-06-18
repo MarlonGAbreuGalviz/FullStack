@@ -19,6 +19,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,7 +34,8 @@ import lombok.Setter;
 @Setter
 public class PasilloDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
+    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)
     private int idPasillo;
 
     @Column(name = "nombre")

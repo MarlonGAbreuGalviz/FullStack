@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -26,11 +27,12 @@ import lombok.Setter;
 @Setter
 public class CopiaLibroDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
+    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)
     private int idCopiaLibro;
     
     @Column(name = "copiaActiva")
-    @NotNull(message = "titulo is required")
+    @NotNull(message = "copiaActiva is required")
     private boolean copiaActiva;
 
     @ManyToOne
