@@ -50,14 +50,7 @@ public class AutorController {
 
     AutorDTO savedAutor = autorService.insertAutorDTO(autorDTO);
     return ResponseEntity.ok(savedAutor);
-}
-
-
-    /*@PutMapping("/{idAutor}")
-    public AutorDTO updateAutorDTO(@PathVariable int idAutor, @RequestBody AutorDTO autor) {
-        AutorDTO aux = autorService.updateAutorDTO(idAutor, autor);
-        return aux;
-    }*/
+    }
 
     @PutMapping("/{idAutor}")
     public ResponseEntity<?> updateAutorDTO(@PathVariable int idAutor, @Valid @RequestBody AutorDTO autor, BindingResult bindingResult) {
@@ -67,7 +60,7 @@ public class AutorController {
 
     AutorDTO aux = autorService.updateAutorDTO(idAutor, autor);
     return ResponseEntity.ok(aux);
-}
+    }
 
     @DeleteMapping("/{idAutor}")
     public AutorDTO deleteAutorDTO(@PathVariable int idAutor) {

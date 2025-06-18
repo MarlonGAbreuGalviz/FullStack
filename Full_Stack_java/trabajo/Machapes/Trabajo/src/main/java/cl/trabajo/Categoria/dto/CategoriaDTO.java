@@ -2,8 +2,11 @@
 
 package cl.trabajo.Categoria.dto;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import cl.trabajo.Libro.dto.LibroDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,17 +29,15 @@ import lombok.Setter;
 @Setter
 public class CategoriaDTO {
     @Id
-    @NotNull(message = "Id de Categoria Necesario")
+    /*@NotNull(message = "Id de Categoria Necesario")*/
     private int idCategoria;
 
-    
     @Column(name = "categoria")
     @NotBlank(message = "Nombre de Categoria Necesaria")
     @Size(max = 30, message = "La Categoria solo peude ser de 30 Caracteres")
     private String categoria;
     
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference ("categoria-libro")
-    private int idLibro;
-    
+    @JsonManagedReference("categoria-libro")
+    private List<LibroDTO> libros;
 }

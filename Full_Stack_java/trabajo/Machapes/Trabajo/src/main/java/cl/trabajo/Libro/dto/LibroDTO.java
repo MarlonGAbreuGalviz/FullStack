@@ -3,9 +3,11 @@ package cl.trabajo.Libro.dto;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import cl.trabajo.Autor.dto.AutorDTO;
+import cl.trabajo.Categoria.dto.CategoriaDTO;
 import cl.trabajo.CopiaLibro.dto.CopiaLibroDTO;
 import jakarta.persistence.CascadeType;
 
@@ -54,12 +56,13 @@ public class LibroDTO {
     private AutorDTO autor;
 
     @ManyToOne
-    @JoinColumn(name = "categoria",nullable = false)
+    @JoinColumn(name = "idCategoria",nullable = true)
     @JsonBackReference ("categoria-libro") 
-    private AutorDTO categoria;
+    private CategoriaDTO categoria;
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference ("libro-copias")
+    @JsonManagedReference("libro-copias")
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private List<CopiaLibroDTO> copiaLibro;
 
 
