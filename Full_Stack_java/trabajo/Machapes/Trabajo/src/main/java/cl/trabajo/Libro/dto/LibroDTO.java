@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import cl.trabajo.Autor.dto.AutorDTO;
+import cl.trabajo.Categoria.dto.CategoriaDTO;
 import cl.trabajo.CopiaLibro.dto.CopiaLibroDTO;
 import jakarta.persistence.CascadeType;
 
@@ -46,7 +47,7 @@ public class LibroDTO {
 
     @Column(name = "isbn")
     @NotNull(message = "isbn is required")
-    private String isbn;
+    private Integer isbn;
 
     @ManyToOne
     @JoinColumn(name = "idAutor",nullable = false)
@@ -56,11 +57,9 @@ public class LibroDTO {
     @ManyToOne
     @JoinColumn(name = "categoria",nullable = false)
     @JsonBackReference ("categoria-libro") 
-    private AutorDTO categoria;
+    private CategoriaDTO categoria;
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference ("libro-copias")
     private List<CopiaLibroDTO> copiaLibro;
-
-
 }

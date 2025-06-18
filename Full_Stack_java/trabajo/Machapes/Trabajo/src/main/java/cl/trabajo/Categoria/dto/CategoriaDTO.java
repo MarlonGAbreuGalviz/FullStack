@@ -2,8 +2,11 @@
 
 package cl.trabajo.Categoria.dto;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import cl.trabajo.Libro.dto.LibroDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,6 +40,5 @@ public class CategoriaDTO {
     
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference ("categoria-libro")
-    private int idLibro;
-    
+    private List<LibroDTO> libros; 
 }
