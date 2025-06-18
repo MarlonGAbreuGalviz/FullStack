@@ -40,4 +40,5 @@ public class ValidacionHandler {
                              .body(Map.of("error", "El cuerpo de la petición no puede estar vacío o es inválido"));
     }
 
+    
 }
