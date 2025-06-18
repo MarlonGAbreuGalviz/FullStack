@@ -21,19 +21,33 @@ public class AutorService implements IAutorService {
         autor.getLibros().forEach(libro -> libro.setAutor(autor));
     }
     return repo.save(autor);
-}
+    }
 
     @Override
     public AutorDTO updateAutorDTO(int idAutor, AutorDTO autor) {
-        autor.setIdAutor(idAutor);
-        AutorDTO aux = repo.save(autor);
-        return aux;
+    AutorDTO autorExistente = repo.findById(idAutor)
+        .orElseThrow(() -> new RuntimeException("Autor no encontrado con ID: " + idAutor));
+
+    autorExistente.setNombreAutor(autor.getNombreAutor());
+    autorExistente.setApellidoAutor(autor.getApellidoAutor());
+
+    // Para actualizar libros (opcional y cuidadoso)
+    if (autor.getLibros() != null) {
+        autor.getLibros().forEach(libro -> libro.setAutor(autorExistente));
+        autorExistente.setLibros(autor.getLibros());
+    }
+
+    return repo.save(autorExistente);
     }
 
     @Override
     public AutorDTO deleteAutorDTO(int idAutor) {
-        repo.deleteById(idAutor);
-        return null;
+        AutorDTO autor = repo.findById(idAutor)
+            .orElseThrow(() -> new RuntimeException("Autor no encontrado"));
+
+        repo.delete(autor);
+        return autor;
+
     }
 
     @Override
@@ -45,6 +59,7 @@ public class AutorService implements IAutorService {
 
     @Override
     public AutorDTO getByidAutor(int idAutor) {
-        return repo.findById(idAutor).get();
+    return repo.findById(idAutor)
+        .orElseThrow(() -> new RuntimeException("Autor no encontrado con ID: " + idAutor));
     }
 }
