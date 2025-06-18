@@ -36,7 +36,7 @@ public class DonacionDTO {
     @NotNull(message = "El libro asociado es obligatorio")
     @ManyToOne
     @JoinColumn(name = "idLibro")
-    @JsonIgnoreProperties({"titulo", "isbn", "stock", "numeroCopia", "CopiaLibro", "copiaLibro"})
+    @JsonIgnoreProperties({"titulo", "isbn", "stock", "numeroCopia", "copias"})
     private LibroDTO libro;
 
 

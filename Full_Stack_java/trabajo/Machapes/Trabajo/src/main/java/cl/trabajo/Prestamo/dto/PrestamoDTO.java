@@ -33,12 +33,6 @@ public class PrestamoDTO {
     @Column(name = "fecPrestamo")
     private LocalDate fecPrestamo;
 
-    // Conexiones con otras tablas
-    @NotNull(message = "Debe especificar la copia del libro")
-    @ManyToOne
-    @JoinColumn(name = "idCopiaLibro")
-    private CopiaLibroDTO copiaLibroDTO;
-
     @NotNull(message = "Debe asignarse un usuario al préstamo")
     @ManyToOne
     @JoinColumn(name = "idUsuario")
@@ -48,5 +42,14 @@ public class PrestamoDTO {
 
     @OneToOne(mappedBy = "prestamo", cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JsonIgnoreProperties(value = {"devuelto", "fecDevolucion", "usuario"})
     private DevolucionDTO devolucion;
+
+
+    @NotNull(message = "Debe asignarse una copia de libro al préstamo")
+    @ManyToOne
+    @JoinColumn(name = "idCopiaLibro")
+    @JsonIgnoreProperties({"estado", "libro"})  // Para evitar recursividad o mostrar solo lo necesario
+    private CopiaLibroDTO copiaLibro;
+
 }

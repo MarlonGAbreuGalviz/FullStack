@@ -3,6 +3,7 @@
 package cl.trabajo.Usuario.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -47,6 +48,7 @@ public class UsuarioDTO {
     @NotNull(message = "Debe asignarse un rol al usuario")
     @ManyToOne
     @JoinColumn(name = "idRol")
+    @JsonIgnoreProperties(value = {"rol"})
     private RolDTO rol;
 
 }
