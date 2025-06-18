@@ -30,14 +30,14 @@ import lombok.Setter;
 @Setter
 public class PisoDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
-    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "piso_seq")
+    @SequenceGenerator(name = "piso_seq", sequenceName = "piso_seq", allocationSize = 1)
     private int idPiso;
 
     @Column(name = "nombre")
     private String nombre;  // Ej: "Planta Baja", "Primer Piso"
 
     @OneToMany(mappedBy = "piso", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonManagedReference("piso-pasillo")
     private List<PasilloDTO> pasillos = new ArrayList<>();
 }

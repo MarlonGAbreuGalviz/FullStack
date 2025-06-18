@@ -32,8 +32,8 @@ import lombok.Setter;
 @Setter
 public class EstanteriaDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
-    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "estanteria_seq")
+    @SequenceGenerator(name = "estanteria_seq", sequenceName = "estanteria_seq", allocationSize = 1)
     private int idEstanteria;
 
     @Column(name = "codigo")
@@ -41,10 +41,10 @@ public class EstanteriaDTO {
 
     @ManyToOne
     @JoinColumn(name = "idPasillo")
-    @JsonBackReference
+    @JsonBackReference("pasillo-estanteria")
     private PasilloDTO pasillo;
 
     @OneToMany(mappedBy = "estanteria")
-    @JsonManagedReference
+    @JsonManagedReference("estanteria-copias")
     private List<CopiaLibroDTO> copiasLibro = new ArrayList<>();
 }

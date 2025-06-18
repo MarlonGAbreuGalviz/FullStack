@@ -34,8 +34,8 @@ public class AutorController {
         return aux;
     }*/
 
-@PostMapping
-public ResponseEntity<?> insertAutorDTO(
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> insertAutorDTO(
     @Valid @RequestBody AutorDTO autorDTO, 
     BindingResult bindingResult) {
 

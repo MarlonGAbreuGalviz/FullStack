@@ -36,8 +36,8 @@ import lombok.Setter;
 
 public class LibroDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
-    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1)    
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "libros_seq")
+    @SequenceGenerator(name = "libros_seq", sequenceName = "libros_seq", allocationSize = 1)    
     private int idLibro;
 
     @Column(name = "titulo")
@@ -49,13 +49,13 @@ public class LibroDTO {
     private String isbn;
 
     @ManyToOne
-    @JoinColumn(name = "idAutor")
-    @JsonBackReference ("autor-libros") 
+    @JoinColumn(name = "idAutor",nullable = false)
+    @JsonBackReference ("autor-libro") 
     private AutorDTO autor;
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private List<CopiaLibroDTO> CopiaLibro;
+    @JsonManagedReference ("libro-copias")
+    private List<CopiaLibroDTO> copiaLibro;
 
 
 }

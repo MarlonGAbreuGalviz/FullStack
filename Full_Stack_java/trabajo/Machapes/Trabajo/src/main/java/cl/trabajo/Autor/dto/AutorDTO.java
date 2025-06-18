@@ -1,3 +1,4 @@
+//Programado y manejado por Sebastian Gonzalez
 package cl.trabajo.Autor.dto;
 
 
@@ -19,6 +20,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -34,22 +36,22 @@ import lombok.Setter;
 @Setter
 public class AutorDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "multa_seq")
-    @SequenceGenerator(name = "multa_seq", sequenceName = "multa_seq", allocationSize = 1) 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "autor_seq")
+    @SequenceGenerator(name = "autor_seq", sequenceName = "autor_seq", allocationSize = 1)
     private int idAutor;
 
     @Column(name = "nombreAutor")
-    @NotBlank(message = "nombreAutor is required")
-    @Size(max = 30, message = "nombreAutor must be at most 100 characters")
+    @NotBlank(message = "El Nombre del Autor no puede estar en Blanco")
+    @Size(max = 30, message = "El Nombre de Autor no puede tener mas de 30 Caracteres")
     private String nombreAutor;
 
     @Column(name = "apellidoAutor")
-    @NotBlank(message = "apellidoAutor is required")
-    @Size(max = 100, message = "apellidoAutor must be at most 100 characters")
+    @NotBlank(message = "El Apellido de Autor no puede estar en Blanco")
+    @Size(max = 30, message = "El Apellido de Autor no puede tener mas de 30 Caracteres")
     private String apellidoAutor;
     
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference ("autor-libros") 
+    @JsonManagedReference ("autor-libro") 
     private List<LibroDTO> libros;
 
     /*@ManyToOne
