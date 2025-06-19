@@ -3,6 +3,7 @@
 package cl.trabajo.Autor.dto;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -47,6 +48,10 @@ public class AutorDTO {
     @NotBlank(message = "apellidoAutor is required")
     @Size(max = 100, message = "apellidoAutor must be at most 100 characters")
     private String apellidoAutor;
+
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference ("autor-libro")
+    private List<LibroDTO> libros = new ArrayList<>();
     
     /* @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
         @JsonManagedReference

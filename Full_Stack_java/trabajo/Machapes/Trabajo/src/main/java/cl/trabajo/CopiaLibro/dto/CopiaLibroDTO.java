@@ -2,6 +2,7 @@ package cl.trabajo.CopiaLibro.dto;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import cl.trabajo.Estanteria.dto.EstanteriaDTO;
 import cl.trabajo.Libro.dto.LibroDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,21 +27,21 @@ import lombok.Setter;
 @Setter
 public class CopiaLibroDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "copia_libro_seq")
-    @SequenceGenerator(name = "copia_libro_seq", sequenceName = "copia_libro_seq", allocationSize = 1)
-    private Integer idCopiaLibro;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "copia_seq")
+    @SequenceGenerator(name = "copia_seq", sequenceName = "copia_seq", allocationSize = 1)
+    private int idCopiaLibro;
+    
+    @Column(name = "copiaActiva")
+    @NotNull(message = "copiaActiva is required")
+    private boolean copiaActiva;
 
-    @NotNull(message = "El estado de la copia es obligatorio")
-    @Column(name = "estado", nullable = false)
-    private Boolean estado; // true = activa, false = inactiva
+    @ManyToOne  
+    @JoinColumn(name = "idEstanteria", nullable = false)
+    @JsonBackReference ("estanteria-copias")
+    private EstanteriaDTO estanteria;
 
-    @NotNull(message = "Debe estar asociada a un libro")
     @ManyToOne
     @JoinColumn(name = "idLibro", nullable = false)
-    @JsonBackReference
+    @JsonBackReference ("libro-copias")
     private LibroDTO libro;
-
-    
-
-
 }

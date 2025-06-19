@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
-
 import cl.trabajo.Autor.dto.AutorDTO;
 import cl.trabajo.Autor.service.IAutorService;
 
