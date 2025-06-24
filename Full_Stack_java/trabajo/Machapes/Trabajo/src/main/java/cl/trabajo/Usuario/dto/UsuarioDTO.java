@@ -3,10 +3,12 @@
 package cl.trabajo.Usuario.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
+import cl.trabajo.Persona.dto.PersonaDTO;
 import cl.trabajo.Rol.dto.RolDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -48,7 +50,15 @@ public class UsuarioDTO {
     @NotNull(message = "Debe asignarse un rol al usuario")
     @ManyToOne
     @JoinColumn(name = "idRol")
-    @JsonIgnoreProperties(value = {"rol"})
+    //@JsonIgnoreProperties(value = {"rol"})
     private RolDTO rol;
 
+    @OneToOne
+    @JoinColumn(name = "idPersona", nullable = false)
+    @JsonBackReference("persona-usuario")
+    private PersonaDTO persona;
+
+    //@OneToOne
+    //@JsonManagedReference("usuario-rol")
+    //private RolDTO rol;
 }

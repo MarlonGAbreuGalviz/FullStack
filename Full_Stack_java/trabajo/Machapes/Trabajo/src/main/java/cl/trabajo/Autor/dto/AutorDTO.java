@@ -52,8 +52,4 @@ public class AutorDTO {
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference ("autor-libro")
     private List<LibroDTO> libros = new ArrayList<>();
-    
-    /* @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
-        @JsonManagedReference
-    private List<LibroDTO> libros; */
 }

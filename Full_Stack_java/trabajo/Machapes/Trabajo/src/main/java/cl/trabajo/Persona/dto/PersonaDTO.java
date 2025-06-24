@@ -4,9 +4,15 @@ package cl.trabajo.Persona.dto;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import cl.trabajo.Usuario.dto.UsuarioDTO;
 // Imports Jakarta para estructurar tabla
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 //Import Jakarta Validadores
@@ -60,4 +66,8 @@ public class PersonaDTO {
     @NotNull(message = "El ID de usuario es obligatorio")
     @Positive(message = "El ID de usuario debe ser un número positivo")
     private Integer idUsuario;
+
+    @OneToOne
+    @JsonManagedReference("persona-usuario")
+    private UsuarioDTO usuario;
 }
