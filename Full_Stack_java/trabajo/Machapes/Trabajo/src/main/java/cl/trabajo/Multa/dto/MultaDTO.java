@@ -1,7 +1,9 @@
 package cl.trabajo.Multa.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import cl.trabajo.Autor.dto.AutorDTO;
 import cl.trabajo.CopiaLibro.dto.CopiaLibroDTO;
 import cl.trabajo.Usuario.dto.UsuarioDTO;
 import jakarta.persistence.*;
@@ -32,17 +34,21 @@ public class MultaDTO {
     @Column(name = "monto")
     private int monto;
     
-    @NotNull(message = "Debe asignarse un usuario a la multa")
-    @ManyToOne
-    @JsonIgnoreProperties({"email", "usuario", "rol"})
-    @JoinColumn(name = "idUsuario")
-    private UsuarioDTO usuario;
+    ///@NotNull(message = "Debe asignarse un usuario a la multa")
+    //@ManyToOne
+    //@JsonIgnoreProperties({"email", "usuario", "rol"})
+    //@JoinColumn(name = "idUsuario")
+    //private UsuarioDTO usuario;
     
-
     @ManyToOne
     @JoinColumn(name = "idCopiaLibro")
     @JsonIgnoreProperties({"estado", "numeroCopia", "libro"})
     private CopiaLibroDTO copiaLibro;
+
+    @ManyToOne
+    @JoinColumn(name = "Multa",nullable = false)
+    @JsonBackReference ("usuario-multa") 
+    private UsuarioDTO usuario;
 
     
 }

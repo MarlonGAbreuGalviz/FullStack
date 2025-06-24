@@ -3,11 +3,16 @@
 package cl.trabajo.Usuario.dto;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import cl.trabajo.Libro.dto.LibroDTO;
+import cl.trabajo.Multa.dto.MultaDTO;
 import cl.trabajo.Persona.dto.PersonaDTO;
 import cl.trabajo.Rol.dto.RolDTO;
 import jakarta.persistence.*;
@@ -57,6 +62,12 @@ public class UsuarioDTO {
     @JoinColumn(name = "idPersona", nullable = false)
     @JsonBackReference("persona-usuario")
     private PersonaDTO persona;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference ("usuario-multa")
+    private List<MultaDTO> multas = new ArrayList<>();
+
+    
 
     //@OneToOne
     //@JsonManagedReference("usuario-rol")
