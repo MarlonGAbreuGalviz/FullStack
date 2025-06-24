@@ -67,8 +67,6 @@ public class UsuarioDTO {
     @JsonManagedReference ("usuario-multa")
     private List<MultaDTO> multas = new ArrayList<>();
 
-    
-
     //@OneToOne
     //@JsonManagedReference("usuario-rol")
     //private RolDTO rol;
