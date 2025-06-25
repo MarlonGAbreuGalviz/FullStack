@@ -3,9 +3,11 @@
 package cl.trabajo.Usuario.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
+import cl.trabajo.Persona.dto.PersonaDTO;
 import cl.trabajo.Rol.dto.RolDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -48,5 +50,10 @@ public class UsuarioDTO {
     @ManyToOne
     @JoinColumn(name = "idRol")
     private RolDTO rol;
+
+    // Asociación con la entidad de Usuario
+    @OneToOne(mappedBy = "usuario")
+    @JsonBackReference("persona-usuario")
+    private PersonaDTO persona;
 
 }
