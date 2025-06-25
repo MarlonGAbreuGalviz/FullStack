@@ -59,7 +59,7 @@ public class UsuarioDTO {
     private RolDTO rol;
 
     @OneToOne
-    @JoinColumn(name = "idPersona", nullable = false)
+    @JoinColumn(name = "rut", nullable = false)
     @JsonBackReference("persona-usuario")
     private PersonaDTO persona;
 
